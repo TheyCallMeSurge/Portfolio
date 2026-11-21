@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surge Paul · Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#ff7a33;--bg:#0f0f10;--soft:#1c1c1e;--body:#d1d1d6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+img{display:block;max-width:100%}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+
+nav{position:sticky;top:0;background:rgba(15,15,16,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .name{font-weight:700;color:var(--ink)}
+nav ul{display:flex;gap:22px;list-style:none;font-size:14px}
+nav ul a{color:var(--muted)}
+nav ul a:hover{color:var(--ink);text-decoration:none}
+@media(max-width:600px){nav ul li.opt{display:none}}
+
+header{padding:72px 0 56px;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;gap:36px;align-items:center}
+header img{width:140px;height:140px;border-radius:50%;object-fit:cover;flex-shrink:0}
+header h1{font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+header .role{font-size:18px;color:var(--muted);margin-top:6px}
+header .contact{margin-top:16px;font-size:15px;display:flex;flex-wrap:wrap;gap:6px 20px}
+header .contact span{color:var(--muted)}
+@media(max-width:600px){header .wrap{flex-direction:column;align-items:flex-start;gap:20px}header img{width:110px;height:110px}header h1{font-size:32px}}
+
+section{padding:56px 0;border-bottom:1px solid var(--line)}
+h2{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
+.about p{font-size:17px;color:var(--body)}
+.edu{margin-top:24px;display:grid;gap:6px;font-size:15px;color:var(--body)}
+.edu b{color:var(--ink)}
+.edu div{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.edu .when{color:var(--muted)}
+
+.item{display:grid;grid-template-columns:220px 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--line)}
+.item:first-of-type{border-top:0;padding-top:0}
+.item.noimg{grid-template-columns:1fr}
+.item .thumb{border-radius:10px;overflow:hidden;background:var(--soft);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.item .thumb img{width:100%;height:100%;object-fit:cover}
+.item .thumb.fit{background:#fff}
+.item .thumb.fit img{object-fit:contain;padding:8px}
+.item h3{font-size:19px;font-weight:600;line-height:1.3}
+.item .sub{font-size:14px;color:var(--muted);margin-top:2px}
+.item p{margin-top:10px;font-size:15px;color:var(--body)}
+.item ul{margin:10px 0 0 18px;font-size:15px;color:var(--body)}
+.item li{margin-top:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-size:12px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--muted)}
+.award{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--accent)}
+@media(max-width:600px){.item{grid-template-columns:1fr;gap:16px}}
+
+.list{display:grid;gap:12px;font-size:15px}
+.list div{display:grid;grid-template-columns:130px 1fr;gap:16px}
+.list .when{color:var(--muted)}
+@media(max-width:600px){.list div{grid-template-columns:1fr;gap:0}}
+
+.skills{display:grid;gap:14px;font-size:15px}
+.skills div{display:grid;grid-template-columns:130px 1fr;gap:16px}
+.skills b{font-weight:600}
+@media(max-width:600px){.skills div{grid-template-columns:1fr;gap:2px}}
+
+footer{padding:40px 0 56px;font-size:14px;color:var(--muted)}
+
+.item{position:relative}
+.item h3 a{color:var(--ink)}
+.item h3 a::after{content:"";position:absolute;inset:0}
+.item:hover h3 a{color:var(--accent);text-decoration:none}
+.item .more{display:inline-block;margin-top:12px;font-size:14px;font-weight:600;color:var(--accent)}
+.item:hover .thumb img{transform:scale(1.03)}
+.item .thumb img{transition:transform .3s}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="name" href="#top">Surge Paul</a>
+    <ul>
+      <li class="opt"><a href="#test">Testing</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li class="opt"><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <img src="img/headshot.jpg" alt="Suragith (Surge) Paul">
+    <div>
+      <h1>Suragith (Surge) Paul</h1>
+      <div class="role">Aerospace Engineer · Test, Instrumentation &amp; Validation</div>
+      <div class="contact">
+        <a href="mailto:spaulusa@gmail.com">spaulusa@gmail.com</a>
+        <a href="https://www.linkedin.com/in/suragith-paul/" target="_blank" rel="noopener">linkedin.com/in/suragith-paul</a>
+        <span>US Citizen</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <h2>About</h2>
+    <p>I am an aerospace engineer focused on testing hardware and the systems that measure it. I have built instrumentation for rocket engine static fires, helped commission a motor dynamometer, run wind tunnel and flight tests, and used test data to find the root cause of failures. I also use computational fluid dynamics (CFD) and finite element analysis (FEA) to predict results before testing, and I check those predictions against real data.</p>
+    <div class="edu">
+      <div><span><b>M.Eng. Engineering Management</b>, Syracuse University</span><span class="when">May 2026</span></div>
+      <div><span><b>B.Eng. Aerospace Engineering</b>, Syracuse University</span><span class="when">May 2025</span></div>
+      <div><span><b>Study Abroad</b>, ICAI, Discovery Madrid, Spain</span><span class="when">Fall 2021</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="test">
+  <div class="wrap">
+    <h2>Test Experience at a Glance</h2>
+    <div class="skills">
+      <div><b>Test types</b><span>Rocket engine static fire · Motor dynamometer testing · Wind tunnel testing · Flight testing · Embedded system and hardware integration testing</span></div>
+      <div><b>Instrumentation</b><span>K-type thermocouples · Signal conditioning · Telemetry · National Instruments data acquisition (NI DAQ) · LabVIEW · Sensor wiring and filtering</span></div>
+      <div><b>Analysis</b><span>Test data analysis and trending · Failure investigation and root cause · Comparing simulation to test results · Test procedures and engineering reports</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <div class="thumb"><img src="img/dd-rack.jpg" alt="Prototype dynamometer rack"></div>
+      <div>
+        <h3><a href="dd-motor-systems.html">Electro-Mechanical Engineering Intern</a></h3>
+        <div class="sub">D&amp;D Motor Systems · Sep 2025 to Jan 2026</div>
+        <ul>
+          <li>Helped build and commission a prototype production dynamometer for testing AC and DC motors, as an in-house alternative to commercial systems that can cost over $500,000.</li>
+          <li>Wired and integrated sensors, telemetry and safety systems, and fixed signal quality problems at high speed with filter and wiring changes.</li>
+          <li>Used the new dynamometer to test and validate the company's first AC motor platform.</li>
+          <li>Analyzed years of motor test data, found an efficiency drop, and traced it to a brush manufacturing defect from a supplier.</li>
+          <li>Wrote test procedures, engineering reports and a motor database to catch future performance drops.</li>
+        </ul>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb"><img src="img/orbit-fire.jpg" alt="Zephyr static fire test"></div>
+      <div>
+        <h3><a href="orbit-rocketry.html">Avionics &amp; Propulsion</a></h3>
+        <div class="sub">Syracuse Rocketry Club (Orbit) · 2022 to Present</div>
+        <ul>
+          <li>Designed and built a thermocouple instrumentation system to measure engine temperatures during static-fire tests of the Zephyr rocket.</li>
+          <li>Handled sensor selection, wiring, signal conditioning, embedded programming and data acquisition.</li>
+          <li>Worked with the propulsion, structures and software teams to integrate avionics hardware into the vehicle.</li>
+        </ul>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item noimg">
+      <div>
+        <h3><a href="endeavor-air.html">Apprentice Aircraft Maintenance Engineering Intern</a></h3>
+        <div class="sub">Endeavor Air, LaGuardia Airport · May to Aug 2024</div>
+        <ul>
+          <li>Assisted licensed Aircraft Maintenance Technicians with A-checks, inspections, troubleshooting and fault isolation on commercial aircraft.</li>
+          <li>Performed avionics checks, wiring inspections, brake and tire changes, and Minimum Equipment List (MEL) item work.</li>
+          <li>Completed maintenance documentation following Federal Aviation Administration (FAA) regulations and maintenance manuals.</li>
+        </ul>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb fit"><img src="img/cr-cfd.jpg" alt="Front wing CFD velocity contour"></div>
+      <div>
+        <h3><a href="citrus-racing.html">Aero &amp; Engine Systems</a></h3>
+        <div class="sub">Citrus Racing (Formula SAE) · 2022 to 2026</div>
+        <ul>
+          <li>Ran CFD on the CR5 front wing in ANSYS Fluent, found the solution had not fully converged, and documented the limits and fixes before the results were used.</li>
+          <li>Took the wing from CAD to 3D-printed TPU prototypes for wind tunnel testing.</li>
+          <li>Took part in engine teardowns and rebuilds, inspecting parts for wear and checking critical dimensions against spec.</li>
+        </ul>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item noimg">
+      <div>
+        <h3><a href="engineering-it.html">Student Technician, IT &amp; Linux Systems</a></h3>
+        <div class="sub">Syracuse University College of Engineering · Aug 2022 to Present</div>
+        <ul>
+          <li>Supported 1,000+ engineering workstations, including lab and research systems.</li>
+          <li>Validated engineering software compatibility during the Windows 10 to Windows 11 migration.</li>
+          <li>Wrote PowerShell automation and compliance reports that the department still uses.</li>
+        </ul>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+
+    <div class="item">
+      <div class="thumb"><img src="img/fa-dome.jpg" alt="Team Falcon flight day"></div>
+      <div>
+        <h3><a href="team-falcon.html">Rubber-Band Propelled Aircraft</a></h3>
+        <div class="sub">Aerospace Engineering Capstone · Team Falcon · Spring 2025</div>
+        <p>Led iterative flight testing of a rubber-band aircraft built to carry a payload for at least 3 seconds. Used flight results to make field changes to center of gravity and stability without rebuilding the airframe. Final result: a 5.5-second flight carrying 13 golf balls (0.5 kg), a capstone payload record.</p>
+        <span class="award">1st Place, Aerospace Engineering Capstone Award</span>
+        <div class="tags"><span>Flight testing</span><span>FEA</span><span>CFD</span><span>SolidWorks</span></div>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb fit"><img src="img/av-render.jpg" alt="Wind turbine rotating shroud"></div>
+      <div>
+        <h3><a href="team-aerovec.html">Diffuser Augmented Wind Turbine</a></h3>
+        <div class="sub">Mechanical Engineering Capstone · Team Aerovec · Spring 2025</div>
+        <p>When CFD could not model the full rotor and diffuser flow, I helped move the project to a test-driven approach. Wind tunnel testing produced power versus wind speed curves for each diffuser design. I ran FEA on each turbine iteration to confirm structural safety before prototype testing.</p>
+        <span class="award">1st Place, MAE Advisory Board Senior Design Award · Boeing Award, Best ME Capstone Presentation</span>
+        <div class="tags"><span>Wind tunnel testing</span><span>ANSYS Fluent</span><span>FEA</span><span>Siemens NX</span></div>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb"><img src="img/pump.jpg" alt="Medical pump test setup"></div>
+      <div>
+        <h3><a href="medical-pump.html">Bio-Inspired Medical Pump System</a></h3>
+        <div class="sub">Research Assistant · MAE Department · Summer 2023</div>
+        <p>Built and tested a low-cost modular syringe pump with a Raspberry Pi (Python) interface and Arduino (C++) motor control. System testing showed that running all three pumps for long periods overloaded the motor driver and caused chip failures, a limit we documented for the next design. The work helped secure external funding.</p>
+        <div class="tags"><span>System testing</span><span>Python</span><span>C++</span><span>Arduino</span></div>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb fit"><img src="img/fan-thermal.jpg" alt="CPU fan thermal analysis"></div>
+      <div>
+        <h3><a href="cpu-fan-fea.html">FEA Analysis of a CPU Cooling Fan</a></h3>
+        <div class="sub">ANSYS Mechanical</div>
+        <p>Ran thermal, structural and modal analysis, including the first six natural frequencies. Studied how increasing speed changed stress and safety factor to set safe operating limits, and confirmed blade deformation stays below the housing clearance. Geometry changes reduced radial deformation by 65%.</p>
+        <div class="tags"><span>Thermal</span><span>Static structural</span><span>Modal</span></div>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb fit"><img src="img/sh-ideal.jpg" alt="Idealized thrust structure"></div>
+      <div>
+        <h3><a href="shuttle-thrust-structure.html">Space Shuttle Thrust Structure Design</a></h3>
+        <div class="sub">Aerospace Structures · Syracuse University</div>
+        <p>Built a MATLAB pipeline to check every member of an Orbiter thrust structure against ultimate (1.5×) and yield (1.25×) safety factors for buckling, crippling and deflection across the full load envelope.</p>
+        <div class="tags"><span>MATLAB</span><span>Load analysis</span><span>Composites</span></div>
+        <span class="more">View details →</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="thumb fit"><img src="img/sp-ibeam.jpg" alt="I-beam spar cross section"></div>
+      <div>
+        <h3><a href="wing-spar.html">Aircraft Wing Spar Design &amp; Fatigue Analysis</a></h3>
+        <div class="sub">Aerospace Structures · Syracuse University</div>
+        <p>Sized a cantilever I-beam wing spar for a 15,000 lb aircraft and confirmed a 10,000-flight fatigue life using the Palmgren-Miner rule with a scatter factor of 4.0.</p>
+        <div class="tags"><span>Fatigue</span><span>Palmgren-Miner</span><span>I-beam theory</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <div class="wrap">
+    <h2>Awards &amp; Leadership</h2>
+    <div class="list">
+      <div><span class="when">Spring 2025</span><span>1st Place, Aerospace Engineering Capstone (Team Falcon)</span></div>
+      <div><span class="when">Spring 2025</span><span>1st Place, Mechanical Engineering Capstone (Team Aerovec)</span></div>
+      <div><span class="when">Spring 2025</span><span>Boeing Award, Best ME Capstone Presentation (Team Aerovec)</span></div>
+      <div><span class="when">2022 to 2023</span><span>President, Society of Asian Scientists and Engineers (SASE)</span></div>
+      <div><span class="when">2022 to 2025</span><span>ECS Peer Leader, College of Engineering &amp; Computer Science</span></div>
+      <div><span class="when">2024 to 2025</span><span>Senior Intern, Syracuse University Office of Admissions</span></div>
+      <div><span class="when">2021</span><span>Global Ambassador, Syracuse Abroad, Discovery Madrid</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><b>Simulation</b><span>ANSYS Fluent, Mechanical, CFX, Workbench · MATLAB/Simulink · SolidWorks · Siemens NX</span></div>
+      <div><b>Programming</b><span>Python · C/C++ · Arduino · PowerShell · LabVIEW · Linux</span></div>
+      <div><b>Systems</b><span>SysML · DOORS · AutoCAD · SolidWorks Electrical · NI DAQ · Jira</span></div>
+      <div><b>Certifications</b><span>Gas &amp; Electrical Safety (National Grid) · Garrett Turbo · Excel</span>  <span class="more">View details →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    Contact: <a href="mailto:spaulusa@gmail.com">spaulusa@gmail.com</a> · <a href="https://www.linkedin.com/in/suragith-paul/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+</footer>
+
+</body>
+</html>
